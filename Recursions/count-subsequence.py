@@ -10,9 +10,5 @@ class Solution:
         skip = self.func(ind + 1,remains,nums)
     def count(self,nums,target):
         return self.func(0,nums,target)
+
     
-if __name__ == "__main__":
-    sol = Solution()
-    nums = [1, 2, 3, 4, 5]
-    target = 5
-    print(f"Number of subsequences with target sum {target}: {sol.countSubsequenceWithTargetSum(nums, target)}")
