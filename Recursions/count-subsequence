@@ -1,18 +1,33 @@
 class Solution:
-    def func(self,ind,remains,nums):
+    def func(self, ind, remains, nums, current):
+        # If we processed all elements
         if ind == len(nums):
-            return 1 if remains == 0 else 0
+            if remains == 0:
+                print(current)   # Print valid subsequence
+            return
+        
+        # If sum becomes negative, stop this path
         if remains < 0:
-            return 0 
+            return
 
-        ## take 
-        take = self.func(ind + 1,remains - nums[ind], nums)
-        skip = self.func(ind + 1,remains,nums)
-    def count(self,nums,target):
-        return self.func(0,nums,target)
-    
+        # 1️⃣ Take current element
+        current.append(nums[ind])
+        self.func(ind + 1, remains - nums[ind], nums, current)
+
+        # Backtrack
+        current.pop()
+
+        # 2️⃣ Skip current element
+        self.func(ind + 1, remains, nums, current)
+
+    def printSubsequencesWithTargetSum(self, nums, target):
+        self.func(0, target, nums, [])
+
+
+# Main
 if __name__ == "__main__":
     sol = Solution()
     nums = [1, 2, 3, 4, 5]
     target = 5
-    print(f"Number of subsequences with target sum {target}: {sol.countSubsequenceWithTargetSum(nums, target)}")
+    print(f"Subsequences with sum {target}:")
+    sol.printSubsequencesWithTargetSum(nums, target)
