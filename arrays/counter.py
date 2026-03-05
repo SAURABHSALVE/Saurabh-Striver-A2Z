@@ -10,8 +10,7 @@
 # print(count_freq([1,2,2,3,1,4]))
 
 from collections import Counter 
+def freq(arr):
+    return dict(Counter(arr)) ## Counter returns a dictionary with the frequency of each element in the array. We convert it to a regular dictionary using dict().
+print(freq([1,2,2,3,1,4]))
 
-def count(arr):
-    freq =dict(Counter(arr))  ## useed type casting to convert the counter object to a dictionary
-    return freq    ## the counter object is a subclass of dictionary that provides a convenient way to count the occurrences of elements in a collection. By converting it to a regular dictionary, we can easily access the frequency of each element.
-print(count([1,2,2,3,1,4])) ## Output: {1: 2, 2: 2, 3: 1, 4: 1}
