@@ -16,3 +16,15 @@ def sum2(arr,target):
                 return [i,j]
         return False
 print(sum2([1,2,3,4],5))
+
+
+## usinf hashing for checking the sum of two numbers in an array is equal to the target or not
+def sum3(arr,target):
+    hashset = set()
+    n = len(arr)
+    for i in range(n):
+        if target - arr[i] in hashset:
+            return True 
+        hashset.add(arr[i])
+    return False
+print(sum3([1,2,3,4],5))
