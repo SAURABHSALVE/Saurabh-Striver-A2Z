@@ -6,4 +6,4 @@ def twoSum(nums,target):
         if target - nums[i] in hashmap:
             return [hashmap[target - nums[i]],i]
         hashmap[nums[i]] = i
-print(twoSum([1,2,3,4],5))
+print(twoSum([1,2,3,4],5))  ## Output: [0,3]``

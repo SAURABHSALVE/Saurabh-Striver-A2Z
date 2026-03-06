@@ -1,3 +1,4 @@
+### Given an array, reverse the array in place. The first element should become the last and the last element should become the first.
 def reverse(arr):
     left = 0
     n = len(arr)
