@@ -8,4 +8,4 @@ class Solution(object):
             xor ^= nums[i]
             
         return xor
-print(Solution().missingNumber([3,0,1]))
+print(Solution().missingNumber([3,0,1])) ## final answer

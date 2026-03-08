@@ -1,5 +1,4 @@
-# class Solution(object):
-#     def countOdds(self, low, high):
-#         return (high + 1) // 2 - low // 2
-
-
+class Solution(object):
+    def countOdds(self, low, high):
+        return (high + 1) // 2 - low // 2
+print(Solution().countOdds(3, 7)) ## final answer 
