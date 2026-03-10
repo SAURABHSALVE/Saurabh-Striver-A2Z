@@ -30,18 +30,18 @@ def sum3(arr,target):
 print(sum3([1,2,3,4],5))
 
 ## using the hashing to print the indices of the two numbers in an array whose sum is equal to the target
-def sum4(arr,target):
-    hashset = {}
+
+def sum(arr,target):
     n = len(arr)
+    
+    hashset = {}
     for i in range(n):
         if target - arr[i] in hashset:
             return [hashset[target - arr[i]],i]
         hashset[arr[i]] = i
-    return False
-print(sum4([1,2,3,4],5))
-
-
-
+print(sum([1,2,3,4],4))
+    
+    
 
 
 
