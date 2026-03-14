@@ -1,9 +1,12 @@
-## optimal solution using hashmap
-def twoSum(nums,target):
-    hashmap = {}
-    n = len(nums)
+def twosum(arr,target):
+    n = len(arr)
+    hashset = {}
     for i in range(n):
-        if target - nums[i] in hashmap:
-            return [hashmap[target - nums[i]],i]
-        hashmap[nums[i]] = i
-print(twoSum([1,2,3,4],5))  ## Output: [0,3]``
+        curr = arr[i]
+        need = target - arr[i]
+        if need in hashset:
+            return [hashset[need],i]
+        hashset[curr] = i
+    return []
+
+print(twosum([1,2,3,4,5],4))
