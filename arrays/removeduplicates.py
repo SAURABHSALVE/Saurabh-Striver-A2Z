@@ -1,17 +1,23 @@
 def remove(arr):
+    n = len(arr)
 
-    if len(arr) == 0:
+    if n == 0:
         return 0
 
     i = 0
 
-    for j in range(1, len(arr)):
+    for j in range(1, n):
 
         if arr[i] != arr[j]:
-            i += 1
+            i = i + 1
             arr[i] = arr[j]
 
     return i + 1
 
 
-print(remove([1,2,3,4,5]))
+arr = [1,1,2,3,3,4]
+
+k = remove(arr)
+
+print("Unique count:", k)
+print("Array:", arr[:k])
