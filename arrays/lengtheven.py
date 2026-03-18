@@ -1,5 +1,5 @@
-class Solution(object):
-    def findNumbers(self, nums):
+
+def findNumbers(nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -12,4 +12,5 @@ class Solution(object):
                 even += 1
 
         return even
-print(Solution().findNumbers([12,345,2,6,7896]))
+print(findNumbers([1,2,3,4,5])) # Output: 0
+    

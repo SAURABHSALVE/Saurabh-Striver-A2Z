@@ -1,17 +1,17 @@
-# def largestelement(arr):
-    
-#     max = arr[0]
-#     n = len(arr)
-#     for i in range(1,n):
-#         if arr[i] > max:
-#             max = arr[i]
-        
-#     return max
-
-# print(largestelement([1,2,3,4,5])) # Output: 5
-
-def largestelement(arr):
-    
-    arr.sort()
-    return arr[-1]
-print(largestelement([1,2,3,4,5])) # Output: 5
+def secondlargest(arr):
+    n = len(arr)
+    largest = float('-inf')
+    second = float('-inf')
+    for i in range(n):
+        if arr[i] > largest:
+            second = largest
+            largest = arr[i]
+        elif arr[i] > second and arr[i] != largest:
+            second = arr[i]
+    return second 
+            
+  
+print(secondlargest([1,2,3,4,5]))
+            
+                
+                
