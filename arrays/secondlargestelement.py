@@ -14,5 +14,5 @@ def secondlargestarray(arr):
     
     return secondmax 
 
-print(secondlargestarray([1,2,3,4,5]))
+print(secondlargestarray([1,2,3,4,5])) ## this is the second largest
         
