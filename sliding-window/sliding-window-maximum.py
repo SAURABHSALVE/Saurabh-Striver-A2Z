@@ -1,3 +1,6 @@
+### sliding-window-maximum.py without using deque approach is as follows: variable size windows
+
+
 # from collections import deque
 
 # class Solution(object):
