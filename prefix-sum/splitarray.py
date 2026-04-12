@@ -9,9 +9,6 @@ def split(nums):
     # 2. Iterate until n-2 (cannot split at the very last index)
     for i in range(len(nums)):
         left_sum += nums[i] 
-        
-        
-    
         # Right_sum is whatever is left over
         right_sum = total - left_sum
         
