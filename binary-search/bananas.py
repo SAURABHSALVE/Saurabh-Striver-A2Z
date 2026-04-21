@@ -31,3 +31,4 @@ class Solution(object):
             # Example: ceil(7 / 3) = 3.0
             total_hours += math.ceil(float(p) / speed)
         return total_hours
+    
