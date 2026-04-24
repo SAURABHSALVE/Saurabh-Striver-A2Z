@@ -1,30 +1,23 @@
 class Solution(object):
     def nextGreaterElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         n = len(nums)
-        # 1. Pre-allocate the list so we can use index assignment
-        nge = [-1] * n 
+        res = [-1] * n
         stack = []
         
-        # 2. Iterate from 2n-1 down to 0 to simulate a circular array
+        # Iterate backwards through a virtual doubled array
         for i in range(2 * n - 1, -1, -1):
-            # Use modulo to stay within array bounds
             current = nums[i % n]
             
-            # Standard monotonic stack logic
+            # Pop elements that are smaller or equal to the current element
             while stack and stack[-1] <= current:
                 stack.pop()
             
-            # 3. Only fill the result array during the "actual" first pass
+            # Only update the result during the first pass (actual indices)
             if i < n:
                 if stack:
-                    nge[i] = stack[-1]
-                else:
-                    nge[i] = -1
+                    res[i] = stack[-1]
             
+            # Add current element to stack for the next comparison
             stack.append(current)
             
-        return nge
+        return res
