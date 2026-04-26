@@ -5,17 +5,24 @@ class Solution(object):
         :rtype: List[int]
         """
         n = len(nums)
-        
-        nge = [-1]*n 
+        # Initialize result array with -1
+        nge = [-1] * n 
         stack = []
-        for i in range(2  x x cc c          v         v v vv   *n-1,-1,-1):
-            current = nums[i%n]
-            while stack and stack[-1]<=current:
+        
+        # We simulate a circular array by traversing from 2*n - 1 down to 0
+        for i in range(2 * n - 1, -1, -1):
+            current = nums[i % n]
+            
+            # Maintain a monotonic decreasing stack (top is the smallest)
+            while stack and stack[-1] <= current:
                 stack.pop()
+            
+            # We only fill the result array during the first 'n' indices (0 to n-1)
             if i < n:
                 if stack:
                     nge[i] = stack[-1]
             
+            # Push current element onto the stack for the next elements to see
             stack.append(current)
-        return nge 
-### this is the code
+            
+        return nge
