@@ -39,3 +39,30 @@ if __name__ == "__main__":
     
     
     ### command to run is  python greedy/Nmeeting.py
+    
+    
+class Solution:
+    # Function to find the maximum number of meetings that can
+    # be performed in a meeting room.
+    def maximumMeetings(self, start, end):
+        # 1. Pair start and end times together
+        # We store them as (end, start) because sorting tuples 
+        # defaults to the first element.
+        meetings = []
+        for i in range(len(start)):
+            meetings.append((end[i], start[i]))
+        
+        # 2. Sort meetings by their end times
+        meetings.sort()
+        
+        count = 0
+        last_end_time = -1
+        
+        # 3. Iterate through sorted meetings
+        for current_end, current_start in meetings:
+            # If the current meeting starts AFTER the last one ended
+            if current_start > last_end_time:
+                count += 1
+                last_end_time = current_end
+                
+        return count
