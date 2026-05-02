@@ -25,4 +25,5 @@ if __name__ == "__main__":
     
     
     ### command to run is  python greedy/jumpgame.py
+    ### added the code
     

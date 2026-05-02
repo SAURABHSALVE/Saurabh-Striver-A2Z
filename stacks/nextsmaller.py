@@ -12,4 +12,4 @@ print(smaller([4,5,2,10,8]))
 
 
 ## python implementation of next smaller element to the right
-### command to run: python nextsmaller.py
+### command to run:  nextsmaller.py
