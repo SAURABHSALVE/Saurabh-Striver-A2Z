@@ -61,3 +61,4 @@ class Solution:
 sol = Solution()
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 print(sol.merge(intervals))
+## command to run the code python greedy/merge-interval.py
