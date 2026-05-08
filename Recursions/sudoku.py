@@ -64,3 +64,6 @@ class Solution(object):
                 
         return False
     ## this is the problem statement of sudoku solver
+    
+    
+    ### python command to run python Recursions/sudoku.py
