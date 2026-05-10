@@ -1,11 +1,23 @@
+"""Problem: Implement the `myAtoi` function that converts a string 
+to a 32-bit signed integer (similar to C/C++'s `atoi` function).
+"""
+
+### example:
+# Input: s = "   -42"
+# Output: -42
+
+## EXAMPLE 2:
+# Input: s = "4193 with words"
+# Output: 4193
+
 INT_MIN = -2**31
 INT_MAX = 2**31 - 1
 
 
 def helper(s,i,num,sign):
-    if i >= len(s) or not s[i].isdigit():
+    if i >= len(s) or not s[i].isdigit():   ###BASE CASE: if we have reached the end of the string or the current character is not a digit, return the result
         return sign*num
-    num = num%10 + int(s[i])
+    num = num*10 + int(s[i])
     if sign*num <= INT_MIN : return INT_MIN
     if sign*num >= INT_MAX : return INT_MAX 
 
@@ -25,6 +37,6 @@ def myAtoi(s):
     
 if __name__ == "__main__":
     s = "  -12345"
-    result = myAtoi(s)
+    result = myAtoi(s)  ## OUTPUT: -12345
     print(f"Input: '{s}'")
     print(f"Output: {result}")
