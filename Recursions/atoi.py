@@ -17,7 +17,8 @@ INT_MAX = 2**31 - 1
 def helper(s,i,num,sign):
     if i >= len(s) or not s[i].isdigit():   ###BASE CASE: if we have reached the end of the string or the current character is not a digit, return the result
         return sign*num
-    num = num*10 + int(s[i])
+    num = num*10 + int(s[i]) ## Update the number by shifting 
+    #the previous digits to the left and adding the new digit
     if sign*num <= INT_MIN : return INT_MIN
     if sign*num >= INT_MAX : return INT_MAX 
 

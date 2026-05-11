@@ -19,7 +19,7 @@ class Solution:
     def findCombination(self, ind, target, arr, ans, ds):
         # Base case: If the target becomes 0, we found a valid combination
         if target == 0:
-            ans.append(list(ds))  # Add the current combination to the result
+            ans.append(ds[:])  # Add the current combination to the result
             return
 
         # Loop through the elements starting from index 'ind'
