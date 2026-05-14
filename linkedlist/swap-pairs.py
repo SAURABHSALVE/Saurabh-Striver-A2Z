@@ -19,3 +19,4 @@ class Solution(object):
             point = first
             
         return dummy.next
+print(Solution.swapPairs([1,2,3,4]))
